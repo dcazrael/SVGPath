@@ -152,7 +152,7 @@ export default class SVGPath {
   }
 
   /**
-   * Converts Path to a string.
+   * Converts Path to a string and trims whitespace.
    * @returns String
    */
   end() {
