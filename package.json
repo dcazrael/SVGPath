@@ -1,5 +1,5 @@
 {
-  "name": "svg-path",
+  "name": "svg-paths",
   "version": "0.0.1",
   "description": "utilities to generate svg paths",
   "main": "dist/index.cjs.js",
