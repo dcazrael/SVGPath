@@ -1,4 +1,4 @@
-export default class SVGPath {
+class SVGPath {
   constructor(path) {
     if (!(this instanceof SVGPath)) {
       return new SVGPath(path);
@@ -44,7 +44,7 @@ export default class SVGPath {
    * @returns this
    */
   horizontalLineTo(x) {
-    this._appendToPath('H', x);
+    this._appendToPath('H', [x]);
     return this;
   }
 
@@ -58,7 +58,7 @@ export default class SVGPath {
    * @returns this
    */
   verticalLineTo(y) {
-    this._appendToPath('V', y);
+    this._appendToPath('V', [y]);
     return this;
   }
 
@@ -97,7 +97,7 @@ export default class SVGPath {
    * The points marked with 'c' are the control points, while the points marked with 'e' are the end points
    * @returns this
    */
-  bezierCurveTo() {
+  quadraticCurveTo() {
     this._appendToPath('Q', arguments);
     return this;
   }
@@ -111,7 +111,7 @@ export default class SVGPath {
    * The points marked with 'e' are the end points
    * @returns this
    */
-  smoothBezierCurveTo() {
+  smoothQuadraticCurveTo() {
     this._appendToPath('T', arguments);
     return this;
   }
@@ -183,3 +183,5 @@ export default class SVGPath {
     this.currentPath += ' ' + symbol + coordinates;
   }
 }
+
+export { SVGPath };
