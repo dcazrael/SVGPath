@@ -174,13 +174,13 @@ class SVGPath {
    * @param {*} args
    */
   _appendToPath(symbol, args) {
-    const coordinates = [...args].join(' ');
+    const coordinates = [...args].join(',');
     if (this.isRelative) {
       symbol = symbol.toLowerCase();
       this.isRelative = false;
     }
 
-    this.currentPath += ' ' + symbol + coordinates;
+    this.currentPath += symbol + coordinates;
   }
 }
 
